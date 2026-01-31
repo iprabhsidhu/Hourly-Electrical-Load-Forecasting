@@ -1,0 +1,6 @@
+mlflow
+notebook
+scikit-learn
+numpy
+matplotlib
+datetime
