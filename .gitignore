@@ -7,4 +7,5 @@ Setup.bash
 
 # Ignore mlflow cache
 mlartifacts/
+.mlartifacts
 mlflow.db
