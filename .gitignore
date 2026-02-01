@@ -1,0 +1,6 @@
+# Ignore all venv files
+venv/
+.venv/
+
+# Ignore project structure setup bash
+Setup.bash
