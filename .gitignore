@@ -4,3 +4,7 @@ venv/
 
 # Ignore project structure setup bash
 Setup.bash
+
+# Ignore mlflow cache
+mlartifacts/
+mlflow.db
