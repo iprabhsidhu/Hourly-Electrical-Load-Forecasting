@@ -1,0 +1,19 @@
+project_name : "Hourly forecasting of Energy Consumption"
+version : "2.0.0"
+
+data:
+  raw : "data/raw/"
+  processed : "data/processed/"
+
+model:
+  name : "SARIMA"
+  version : "v1"
+  order : [1,0,2]
+  seasonal_order: [1,1,0,24]
+  params:
+    enforce_stationarity : False
+    enforce_invertibality : False
+    method : "powell"
+
+output:
+  model_save_path : "Models/"

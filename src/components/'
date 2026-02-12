@@ -1,0 +1,21 @@
+import pandas as pd
+from data_ingestion import load_data
+from statsmodels.tsa.stattools import adfuller
+
+def Preprocess_data():
+    df = load_data()
+    df['AEP_MW'] = df['AEP_MW'] - df['AEP_MW'].shift(24)
+    df = check_stationarity(df)
+
+
+def check_stationarity(dataframe):
+    result = adfuller(Dataframe[Dataframe.columns[-1]])
+    if result[1] > 0.05:
+        count = 1
+        while True:
+            dataframe = dataframe.diff().dropna()
+            result = adfuller(dataframe[dataframe.column[-1]])
+            count += 1
+            if result[1] <= 0.05:
+                break
+    return dataframe
