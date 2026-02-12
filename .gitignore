@@ -7,7 +7,7 @@ __pycache__/
 *.so
 
 #Jupyter
-.ipyb_checkpoints/
+.ipynb_checkpoints/
 
 # Virtual Environments
 venv/
