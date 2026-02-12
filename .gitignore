@@ -1,11 +1,37 @@
-# Ignore all venv files
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+#Jupyter
+.ipyb_checkpoints/
+
+# Virtual Environments
 venv/
-.venv/
+.env/
+.envrc
 
-# Ignore project structure setup bash
-Setup.bash
+# logs
+logs/
+*.log
 
-# Ignore mlflow cache
-mlartifacts/
-.mlartifacts
-mlflow.db
+# OS
+.DS_Stor
+Thumbs.db
+
+# ML Artifacts
+models/
+artifacts/
+outputs/
+mlruns/
+
+# Data
+data/processed/
+
+# cache tools
+.pytest_cache/
+.mypy_cache/
+.cache/
