@@ -35,3 +35,9 @@ data/processed/
 .pytest_cache/
 .mypy_cache/
 .cache/
+
+# Mlflow
+mlflow.db
+
+# bash
+Setup.bash
