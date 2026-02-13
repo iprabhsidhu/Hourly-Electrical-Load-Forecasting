@@ -1,6 +1,6 @@
 mlflow
-notebook
-scikit-learn
+statsmodels
 numpy
 matplotlib
-datetime
+pandas
+

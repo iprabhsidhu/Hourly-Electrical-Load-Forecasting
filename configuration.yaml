@@ -1,5 +1,5 @@
 project_name : "Hourly forecasting of Energy Consumption"
-version : "2.0.0"
+version : "(2.1.0) Stable Model implemented"
 
 data:
   raw : "data/raw/"
