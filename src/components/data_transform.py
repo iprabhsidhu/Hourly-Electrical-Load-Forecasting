@@ -1,10 +1,8 @@
 import pandas as pd
-from src.components.data_ingestion import load_data
-from src.config import cfg
 
-def process_data():
-    df = load_data()
+def process_data(cfg, df):
     df = df.asfreq('h')
     df['AEP_MW'] = df['AEP_MW'].interpolate(method='linear')
-    df = df.loc[df.index.max() - pd.Timedelta(days=60): df.index.mx()]
+    df = df.loc[df.index.max() - pd.Timedelta(days=30): df.index.max()]
     df.to_csv(cfg.PROCESSEDDATADIR / 'processed_data.csv')
+    return df

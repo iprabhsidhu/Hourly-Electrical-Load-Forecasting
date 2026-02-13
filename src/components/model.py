@@ -1,7 +1,6 @@
 import os
 import pandas as pd
 import numpy as np
-from src.config import cfg
 from statsmodels.tsa.statespace.sarimax import SARIMAX, SARIMAXResults
 
 class Model:
@@ -21,8 +20,8 @@ class Model:
     def fit(self, series, exog=None):
         model = SARIMAX(
                 series,
-                exog=exog
-                order=self.order
+                exog=exog,
+                order=self.order,
                 seasonal_order=self.seasonal_order,
                 enforce_stationarity=self.fit_params.get('enforce_stationarity'),
                 enforce_invertibility=self.fit_params.get('enforce_invertibility')
@@ -30,15 +29,17 @@ class Model:
 
         self.model_res = model.fit(
                 method = self.fit_params.get('method'),
-                disp=False
-        i        )
+                disp=False,
+                )
+        print(self.model_res.summary())
+        print('-------------------')
         print("Training complete")
     
     def save_model(self):
         if self.model_res is None:
             raise ValueError('no model results found to save. Fit the model first.')
 
-        if not os.path.exist(self.save_path):
+        if not os.path.exists(self.save_path):
             os.makedirs(self.save_path)
 
         filename = f"{self.model_name}_{self.model_version}.pkl"
